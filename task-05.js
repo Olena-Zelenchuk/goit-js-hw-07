@@ -5,5 +5,7 @@ inputRef.addEventListener("input", (event) => {
   event.preventDefault();
   const inputName = event.target.value;
 
-  spanName.textContent = inputName;
+  inputName.length === 0
+    ? (spanName.textContent = "незнайомець")
+    : (spanName.textContent = inputName);
 });
