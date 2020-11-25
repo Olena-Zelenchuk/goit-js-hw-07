@@ -6,12 +6,10 @@ const counter = document.querySelector("#value");
 const increment = (event) => {
   counterValue += 1;
   counter.textContent = counterValue;
-  return counter.textContent;
 };
 const decrement = (event) => {
   counterValue -= 1;
   counter.textContent = counterValue;
-  return counter.textContent;
 };
 
 btnIncRef.addEventListener("click", increment);
