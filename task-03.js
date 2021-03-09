@@ -16,22 +16,25 @@ const images = [
   },
 ];
 
-const createImageItem = (image) => {
-  const imageItemRef = document.createElement("li");
-  const imageRef = document.createElement("img");
-
-  imageRef.src = image.url;
-  imageRef.alt = image.alt;
-
-  imageItemRef.append(imageRef);
-
-  return imageItemRef;
-};
-
-const makeImageTags = images.map((image) => createImageItem(image));
-console.log(makeImageTags);
-
 const gallery = document.querySelector("#gallery");
-console.log(gallery);
 
-gallery.append(...makeImageTags);
+// const createImageItem = (image) => {
+//   const imageItemRef = document.createElement("li");
+//   const imageRef = document.createElement("img");
+
+//   imageRef.src = image.url;
+//   imageRef.alt = image.alt;
+
+//   imageItemRef.append(imageRef);
+
+//   return imageItemRef;
+// };
+// const makeImageTags = images.map((image) => createImageItem(image));
+// console.log(createImageItem(images[1]));
+// gallery.append(...makeImageTags);
+
+// gallery.insertAdjacentHTML("afterbegin", "<li><img src= alt= ></li>");
+
+const getImage = images.map(image => `<li><img src=${image.url} alt=${image.alt}></li>`);
+
+gallery.insertAdjacentHTML('afterbegin', getImage.join(''))
